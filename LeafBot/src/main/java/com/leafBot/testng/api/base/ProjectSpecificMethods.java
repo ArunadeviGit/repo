@@ -19,8 +19,9 @@ public class ProjectSpecificMethods extends SeleniumBase {
   
   @BeforeMethod
   public void beforeMethod() {
-	startApp("chrome", "http://leaftaps.com/opentaps");
-	node = test.createNode(testcaseName);
+	//startApp("chrome", "http://leaftaps.com/opentaps");
+	  startApp("chrome", "https://acme-test.uipath.com/account/login");
+	  node = test.createNode(testcaseName);
   }
 
   @AfterMethod

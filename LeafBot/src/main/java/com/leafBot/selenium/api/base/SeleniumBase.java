@@ -254,23 +254,23 @@ public class SeleniumBase extends Reporter implements Browser, Element{
 		try {
 			if(browser.equalsIgnoreCase("chrome")) {
 				System.setProperty("webdriver.chrome.driver",
-						"./drivers/chromedriver.exe");
+						"./drivers/chromedriver");
 				driver = new ChromeDriver();
 			} else if(browser.equalsIgnoreCase("firefox")) {
 				System.setProperty("webdriver.gecko.driver",
-						"./drivers/geckodriver.exe");
+						"./drivers/geckodriver");
 				driver = new FirefoxDriver();
 			} else if(browser.equalsIgnoreCase("ie")) {
 				System.setProperty("webdriver.ie.driver",
-						"./drivers/IEDriverServer.exe");
+						"./drivers/IEDriverServer");
 				driver = new InternetExplorerDriver();
 			}
 			driver.navigate().to(url);
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		} catch (Exception e) {
-			reportStep("The Browser Could not be Launched. Hence Failed", "fail");
-			throw new RuntimeException();
+		//	reportStep("The Browser Could not be Launched. Hence Failed", "fail");
+		//	throw new RuntimeException();
 		} finally {
 //			takeSnap();
 		}
